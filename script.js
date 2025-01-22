@@ -4,14 +4,12 @@ class Carousel {
     this.track = container.querySelector(".carousel-track");
     this.items = Array.from(container.querySelectorAll(".carousel-item"));
     this.currentIndex = 0;
-    this.isTransitioning = false; // Prevent simultaneous transitions
-
+    this.isTransitioning = false;
     this.init();
     this.addEventListeners();
   }
 
   init() {
-    // Set initial positions
     this.updateCarousel();
   }
 
@@ -30,10 +28,10 @@ class Carousel {
       }
     });
 
-    // Allow interaction once transition completes
+
     setTimeout(() => {
       this.isTransitioning = false;
-    }, 500); // Match the CSS transition duration
+    }, 200); 
   }
 
   getRelativeIndex(offset) {
@@ -59,20 +57,20 @@ class Carousel {
     let scrollTimeout;
 
     this.container.addEventListener("wheel", (e) => {
-      if (this.isTransitioning) return; // Ignore if transitioning
+      if (this.isTransitioning) return; 
 
-      clearTimeout(scrollTimeout); // Reset throttle timer
+      clearTimeout(scrollTimeout);
 
       scrollTimeout = setTimeout(() => {
         if (e.deltaY < 0) {
-          this.prev(); // Scroll up
+          this.prev(); 
         } else if (e.deltaY > 0) {
-          this.next(); // Scroll down
+          this.next(); 
         }
-      }, 80); // Throttle duration (in milliseconds)
+      }, 80); 
     });
   }
 }
 
-// Initialize the carousel
+//  carousel initialization
 const carousel = new Carousel(document.querySelector(".carousel-container"));
