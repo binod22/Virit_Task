@@ -6,8 +6,8 @@ This project implements a carousel component that allows users to navigate throu
 
 
 ## ✨Features
--Smooth transitions between carousel items.
--Mouse wheel support for navigation.
--Prevents simultaneous transitions to enhance user experience.
+- Smooth transitions between carousel items.
+- Mouse wheel support for navigation.
+- Prevents simultaneous transitions to enhance user experience.
 
 visit 🌐 => https://virittask.netlify.app
